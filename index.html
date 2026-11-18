@@ -3,247 +3,104 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Legalor | Estudio Jurídico</title>
+<title>Marcos Mena | Desarrollador de Software</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:ital,wght@0,500;0,700;1,700;1,800&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
-<style>
-:root{
-  --black:#0a0a0c;
-  --ink:#16161a;
-  --red:#e3000f;
-  --blood:#8c0009;
-  --white:#f5f5f0;
-  --yellow:#ffd500;
-  --grey:#9a9a9f;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--black);color:var(--white);font-family:'Barlow',Arial,sans-serif;line-height:1.6;overflow-x:hidden}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
-
-h1,h2,h3{font-family:'Anton','Barlow Condensed',Impact,sans-serif;font-weight:400;text-transform:uppercase;line-height:1;letter-spacing:.02em}
-.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-section{padding:96px 0;position:relative}
-
-/* NAV */
-header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,10,12,.92);border-bottom:3px solid var(--red);backdrop-filter:blur(6px)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
-.logo{font-family:'Anton',sans-serif;font-size:1.7rem;letter-spacing:.06em;display:flex;align-items:center;gap:10px}
-.logo b{display:inline-grid;place-items:center;width:34px;height:34px;background:var(--red);color:var(--white);transform:skewX(-10deg);font-size:1.3rem}
-.nav ul{display:flex;gap:30px;list-style:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;text-transform:uppercase;letter-spacing:.08em}
-.nav ul a:hover{color:var(--yellow)}
-.btn{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.08em;font-size:1.15rem;padding:14px 34px;background:var(--red);color:var(--white);border:0;cursor:pointer;clip-path:polygon(12px 0,100% 0,calc(100% - 12px) 100%,0 100%);transition:background .15s,color .15s}
-.btn:hover{background:var(--yellow);color:var(--black)}
-.btn.ghost{background:var(--white);color:var(--black)}
-.btn.ghost:hover{background:var(--yellow)}
-.menu-toggle{display:none;background:none;border:2px solid var(--white);color:var(--white);font-size:1.4rem;width:44px;height:40px;cursor:pointer}
-
-/* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;padding-top:110px;background:var(--black);overflow:hidden}
-.hero-photo{position:absolute;inset:0 0 0 38%;background:#222 url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1400&q=70') center/cover;filter:grayscale(1) contrast(1.15);clip-path:polygon(18% 0,100% 0,100% 100%,0 100%)}
-.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--red) 0,rgba(227,0,15,.55) 30%,rgba(10,10,12,.25) 100%);mix-blend-mode:multiply}
-.hero::before{content:"";position:absolute;left:-10%;top:0;width:60%;height:100%;background:repeating-linear-gradient(115deg,transparent 0 22px,rgba(255,255,255,.03) 22px 24px)}
-.hero .wrap{position:relative;z-index:2;width:100%}
-.hero h1{font-size:clamp(3.4rem,9vw,8rem);transform:skewX(-8deg);max-width:760px}
-.hero h1 span{display:block;color:var(--red);-webkit-text-stroke:0}
-.hero h1 em{font-style:normal;color:var(--yellow)}
-.hero p{max-width:480px;margin:28px 0 34px;font-size:1.15rem;color:#d8d8d2}
-.hero .actions{display:flex;gap:16px;flex-wrap:wrap}
-.stripe{position:absolute;bottom:0;left:0;right:0;height:14px;background:repeating-linear-gradient(-45deg,var(--yellow) 0 18px,var(--black) 18px 36px);z-index:3}
-
-/* STATS */
-.stats{background:var(--red);padding:0}
-.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
-.stat{padding:34px 20px;text-align:center;border-right:2px solid rgba(0,0,0,.25);transform:skewX(-8deg)}
-.stat:last-child{border-right:0}
-.stat strong{display:block;font-family:'Anton',sans-serif;font-size:3.4rem;font-weight:400;line-height:1}
-.stat span{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:1rem}
-
-/* TITLES */
-.title{margin-bottom:56px}
-.title h2{font-size:clamp(2.4rem,5vw,4rem);display:inline-block;transform:skewX(-8deg);border-left:12px solid var(--red);padding-left:18px}
-.title p{margin-top:14px;color:var(--grey);max-width:560px}
-
-/* AREAS */
-.areas{background:var(--ink)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--black);border:2px solid #2a2a30;padding:34px 28px;position:relative;transition:transform .15s,border-color .15s}
-.card::before{content:"";position:absolute;top:0;right:0;border-style:solid;border-width:0 38px 38px 0;border-color:transparent var(--red) transparent transparent}
-.card:hover{transform:translate(-4px,-4px);border-color:var(--yellow);box-shadow:8px 8px 0 var(--red)}
-.card .ico{font-size:2.2rem;margin-bottom:14px;color:var(--yellow)}
-.card h3{font-size:1.6rem;margin-bottom:10px}
-.card p{color:var(--grey);font-size:.98rem}
-
-/* ABOUT */
-.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-.about .pic{position:relative;aspect-ratio:4/5;background:#222 url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1000&q=70') center/cover;filter:grayscale(1) contrast(1.1);clip-path:polygon(0 0,100% 0,100% 88%,88% 100%,0 100%)}
-.about .pic::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,transparent 55%,rgba(227,0,15,.7))}
-.about h2{font-size:clamp(2.4rem,5vw,3.8rem);margin-bottom:22px}
-.about p{color:#cfcfca;margin-bottom:18px}
-.ticks{list-style:none;margin:22px 0 32px}
-.ticks li{padding-left:34px;position:relative;margin-bottom:10px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.2rem;text-transform:uppercase;letter-spacing:.04em}
-.ticks li::before{content:"";position:absolute;left:0;top:6px;width:18px;height:18px;background:var(--yellow);clip-path:polygon(0 50%,35% 50%,35% 0,100% 0,100% 100%,35% 100%,35% 50%);transform:rotate(45deg) scale(.8)}
-
-/* NEWS */
-.news{background:var(--ink)}
-.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-.post{background:var(--black);border-bottom:6px solid var(--red)}
-.post .thumb{height:190px;background:#222 center/cover;filter:grayscale(1) contrast(1.1)}
-.post:nth-child(1) .thumb{background-image:url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=800&q=70')}
-.post:nth-child(2) .thumb{background-image:url('https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=800&q=70')}
-.post:nth-child(3) .thumb{background-image:url('https://images.unsplash.com/photo-1556157382-97eedc0be3b4?auto=format&fit=crop&w=800&q=70')}
-.post .body{padding:24px}
-.tag{display:inline-block;background:var(--yellow);color:var(--black);font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:.85rem;padding:2px 12px;margin-bottom:12px;transform:skewX(-10deg)}
-.post h3{font-size:1.4rem;margin-bottom:10px;line-height:1.15}
-.post p{color:var(--grey);font-size:.95rem}
-
-/* TESTIMONIAL */
-.quote{text-align:center;background:linear-gradient(rgba(10,10,12,.86),rgba(10,10,12,.86)),#111 url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1600&q=60') center/cover fixed}
-.quote blockquote{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:700;font-size:clamp(1.6rem,3.4vw,2.6rem);line-height:1.25;max-width:860px;margin:0 auto 22px}
-.quote cite{font-style:normal;color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-
-/* CONTACT */
-.contact .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:56px}
-.contact h2{font-size:clamp(2.4rem,5vw,3.8rem);margin-bottom:18px}
-.contact .info p{color:#cfcfca;margin-bottom:10px}
-form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-form .full{grid-column:1/-1}
-label{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.95rem;margin-bottom:4px}
-input,select,textarea{width:100%;background:var(--ink);border:2px solid #34343a;color:var(--white);padding:12px 14px;font:inherit}
-input:focus,select:focus,textarea:focus{border-color:var(--red);outline:none}
-textarea{min-height:120px;resize:vertical}
-
-/* FOOTER */
-footer{background:#000;border-top:6px solid var(--red);padding:40px 0;color:var(--grey);font-size:.95rem}
-footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center}
-
-/* RESPONSIVE */
-@media(max-width:900px){
-  .grid,.news-grid{grid-template-columns:1fr 1fr}
-  .about .wrap,.contact .wrap{grid-template-columns:1fr}
-  .stats .wrap{grid-template-columns:1fr 1fr}
-  .hero-photo{inset:0;opacity:.35;clip-path:none}
-}
-@media(max-width:640px){
-  section{padding:70px 0}
-  .menu-toggle{display:block}
-  .nav ul{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--black);border-bottom:3px solid var(--red)}
-  .nav ul.open{display:flex}
-  .nav ul li a{display:block;padding:16px 24px;border-top:1px solid #222}
-  .nav .btn{display:none}
-  .grid,.news-grid,form{grid-template-columns:1fr}
-}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:ital,wght@0,500;0,700;1,800&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header>
   <div class="wrap nav">
-    <a href="#inicio" class="logo"><b>L</b>Legalor</a>
+    <a href="#inicio" class="logo"><b>M</b>Marcos Mena</a>
     <button class="menu-toggle" aria-label="Abrir menú" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
     <ul id="menu">
-      <li><a href="#areas">Áreas</a></li>
-      <li><a href="#nosotros">Nosotros</a></li>
-      <li><a href="#noticias">Noticias</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#sobre-mi">Sobre mí</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
-    <a href="#contacto" class="btn">Consulta gratis</a>
+    <a href="#contacto" class="btn">Contrátame</a>
   </div>
 </header>
 
 <main>
 <section class="hero" id="inicio">
-  <div class="hero-photo" role="img" aria-label="Abogado sonriendo"></div>
   <div class="wrap">
-    <h1>Tu defensa<span>no pierde</span><em>el round.</em></h1>
-    <p>Más de 20 años litigando casos civiles, corporativos y de familia. Estrategia clara, cero rodeos.</p>
-    <div class="actions">
-      <a href="#contacto" class="btn">Pedir consulta gratis</a>
-      <a href="#areas" class="btn ghost">Ver áreas</a>
+    <div>
+      <h1>Código<span>sin rodeos.</span><em>Hola, soy Marcos.</em></h1>
+      <p>Estudiante de Desarrollo de Software en la UTE (Quito). Construyo sistemas con Odoo, Django, Python y hardware con ESP32.</p>
+      <div class="actions">
+        <a href="#proyectos" class="btn">Ver proyectos</a>
+        <a href="#contacto" class="btn ghost">Contacto</a>
+      </div>
     </div>
+    <pre class="code" aria-label="Fragmento de código"><span class="c"># marcos.py</span>
+<span class="k">class</span> Marcos:
+    ciudad = <span class="s">"Quito, Ecuador"</span>
+    stack  = [<span class="s">"Python"</span>, <span class="s">"Odoo"</span>, <span class="s">"Django"</span>,
+              <span class="s">"Playwright"</span>, <span class="s">"ESP32"</span>]
+    <span class="k">def</span> build(self, idea):
+        <span class="k">return</span> idea.to_working_system()</pre>
   </div>
   <div class="stripe"></div>
 </section>
 
 <div class="stats">
   <div class="wrap">
-    <div class="stat"><strong>1998</strong><span>Año de fundación</span></div>
-    <div class="stat"><strong>547</strong><span>Casos ganados</span></div>
-    <div class="stat"><strong>45</strong><span>Abogados</span></div>
-    <div class="stat"><strong>1500</strong><span>Clientes</span></div>
+    <div class="stat"><strong>6+</strong><span>Proyectos</span></div>
+    <div class="stat"><strong>3</strong><span>Sistemas: Win / Linux / Mac</span></div>
+    <div class="stat"><strong>Odoo</strong><span>Backend</span></div>
+    <div class="stat"><strong>UTE</strong><span>Universidad</span></div>
   </div>
 </div>
 
-<section class="areas" id="areas">
+<section class="projects" id="proyectos">
   <div class="wrap">
-    <div class="title"><h2>Áreas de práctica</h2><p>Elige tu frente. Cada caso lo lleva un especialista.</p></div>
+    <div class="title"><h2>Proyectos</h2><p>Trabajos académicos y personales, de la base de datos al hardware.</p></div>
     <div class="grid">
-      <article class="card"><div class="ico">⚖</div><h3>Derecho de familia</h3><p>Divorcios, custodia, pensiones y acuerdos que protegen lo que importa.</p></article>
-      <article class="card"><div class="ico">▣</div><h3>Derecho empresarial</h3><p>Constitución de empresas, contratos y resolución de conflictos societarios.</p></article>
-      <article class="card"><div class="ico">⚑</div><h3>Litigios civiles</h3><p>Representación firme en juicios, demandas y cobros.</p></article>
-      <article class="card"><div class="ico">☂</div><h3>Defensa de seguros</h3><p>Reclamos, coberturas negadas y defensa ante aseguradoras.</p></article>
-      <article class="card"><div class="ico">⌂</div><h3>Inmuebles y bienes</h3><p>Compraventas, escrituras, arrendamientos y herencias.</p></article>
-      <article class="card"><div class="ico">$</div><h3>Derecho financiero</h3><p>Deudas, créditos, reestructuraciones y asesoría tributaria.</p></article>
+      <article class="card"><h3>Pedidos McDonald's</h3><p>Sistema de pedidos con backend Odoo y frontend Django conectados por XML-RPC. Flujo completo desde login hasta facturación.</p><span class="tag">Odoo</span><span class="tag">Django</span><span class="tag">XML-RPC</span></article>
+      <article class="card"><h3>Clínica dental Serodu</h3><p>Gestión de historias clínicas, odontogramas, planes de tratamiento y diagnósticos CIE-10, con reportes PDF en QWeb.</p><span class="tag">Odoo</span><span class="tag">QWeb</span><span class="tag">PostgreSQL</span></article>
+      <article class="card"><h3>Circuito Benchmark</h3><p>Circuito ESP32/Arduino de 4 modos. Mi parte: Benchmark midiendo latencia, throughput y jitter.</p><span class="tag">ESP32</span><span class="tag">Arduino</span><span class="tag">C++</span></article>
+      <article class="card"><h3>Connected Line</h3><p>Plataforma de telefonía IP con Issabel sobre Rocky Linux, analítica de llamadas en Python y base de datos MariaDB.</p><span class="tag">Issabel</span><span class="tag">Python</span><span class="tag">MariaDB</span></article>
+      <article class="card"><h3>Pruebas E2E con Playwright</h3><p>Automatización de pruebas contra un ERP Odoo: page objects, setup global y utilidades RPC.</p><span class="tag">Playwright</span><span class="tag">TypeScript</span><span class="tag">Odoo</span></article>
+      <article class="card"><h3>Módulos Odoo a medida</h3><p>Tienda de zapatos con proveedores, barbería multi-módulo, transporte público y horarios educativos.</p><span class="tag">Odoo</span><span class="tag">XML</span><span class="tag">Python</span></article>
     </div>
   </div>
 </section>
 
-<section class="about" id="nosotros">
+<section class="about" id="sobre-mi">
   <div class="wrap">
-    <div class="pic" role="img" aria-label="Balanza de la justicia"></div>
     <div>
-      <h2>Directos. Preparados. Implacables.</h2>
-      <p>Somos un estudio jurídico que trata cada caso como si fuera el último. Analizamos, planificamos y litigamos con un solo objetivo: el mejor resultado para ti.</p>
+      <h2>Directo. Práctico. Iterativo.</h2>
+      <p>Estudio Tecnología Superior en Desarrollo de Software en Quito. Trabajo cómodo en Windows, Linux y Mac, y me gusta colaborar en equipo en proyectos reales.</p>
       <ul class="ticks">
-        <li>Primera consulta sin costo</li>
-        <li>Respuesta en menos de 24 horas</li>
-        <li>Honorarios claros desde el inicio</li>
+        <li>Backend y ERP con Odoo</li>
+        <li>Frontend web con Django</li>
+        <li>Pruebas automatizadas</li>
       </ul>
-      <a href="#contacto" class="btn">Hablar con un abogado</a>
+      <a href="#contacto" class="btn">Hablemos</a>
     </div>
-  </div>
-</section>
-
-<section class="news" id="noticias">
-  <div class="wrap">
-    <div class="title"><h2>Noticias recientes</h2></div>
-    <div class="news-grid">
-      <article class="post"><div class="thumb"></div><div class="body"><span class="tag">Civil</span><h3>¿Qué hacer si te notifican una demanda?</h3><p>Los primeros pasos y plazos que debes conocer para no perder derechos.</p></div></article>
-      <article class="post"><div class="thumb"></div><div class="body"><span class="tag">Empresas</span><h3>Contratos: cláusulas que sí debes revisar</h3><p>Errores frecuentes al firmar acuerdos comerciales y cómo evitarlos.</p></div></article>
-      <article class="post"><div class="thumb"></div><div class="body"><span class="tag">Familia</span><h3>Custodia compartida: guía rápida</h3><p>Cómo se decide, qué se evalúa y cómo prepararte.</p></div></article>
+    <div class="skills">
+      <span>Python</span><span>Odoo</span><span>Django</span><span>XML / QWeb</span><span>PostgreSQL</span><span>MariaDB</span><span>Playwright</span><span>Arduino / ESP32</span><span>Linux</span><span>Git &amp; GitHub</span><span>HTML / CSS</span>
     </div>
-  </div>
-</section>
-
-<section class="quote">
-  <div class="wrap">
-    <blockquote>“Cuando todo parecía perdido, me devolvieron el control del caso. Profesionales de principio a fin.”</blockquote>
-    <cite>María G. — Cliente</cite>
   </div>
 </section>
 
 <section class="contact" id="contacto">
   <div class="wrap">
     <div class="info">
-      <h2>Solicita tu consulta gratis</h2>
-      <p>Cuéntanos tu caso y te respondemos hoy.</p>
-      <p>📍 Av. Principal 123, Quito</p>
-      <p>📞 +593 99 999 9999</p>
-      <p>✉ contacto@legalor.com</p>
+      <h2>Trabajemos juntos</h2>
+      <p>Cuéntame tu idea y te respondo pronto.</p>
+      <p>📍 Quito, Ecuador</p>
+      <p>✉ tucorreo@ejemplo.com</p>
+      <p>🐙 github.com/tu-usuario</p>
     </div>
-    <form onsubmit="event.preventDefault();alert('Mensaje enviado. Te contactaremos pronto.');this.reset()">
+    <form onsubmit="event.preventDefault();alert('Mensaje enviado. Te responderé pronto.');this.reset()">
       <div><label for="n">Nombre</label><input id="n" required></div>
       <div><label for="e">Correo</label><input id="e" type="email" required></div>
-      <div><label for="t">Teléfono</label><input id="t" type="tel"></div>
-      <div><label for="a">Área</label>
-        <select id="a"><option>Familia</option><option>Empresarial</option><option>Civil</option><option>Seguros</option><option>Inmuebles</option><option>Financiero</option></select>
-      </div>
-      <div class="full"><label for="m">Tu caso</label><textarea id="m"></textarea></div>
-      <div class="full"><button class="btn" type="submit">Enviar consulta</button></div>
+      <div class="full"><label for="m">Mensaje</label><textarea id="m" required></textarea></div>
+      <div class="full"><button class="btn" type="submit">Enviar</button></div>
     </form>
   </div>
 </section>
@@ -251,8 +108,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;
 
 <footer>
   <div class="wrap">
-    <span class="logo"><b>L</b>Legalor</span>
-    <span>© 2026 Legalor. Todos los derechos reservados.</span>
+    <span class="logo"><b>M</b>Marcos Mena</span>
+    <span>© 2026 Marcos Mena. Todos los derechos reservados.</span>
   </div>
 </footer>
 
